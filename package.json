@@ -1,0 +1,46 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "start": "npm run tsc && node ./dist/index.js",
+    "prepare": "husky install",
+    "lint-staged": "lint-staged",
+    "lint": "eslint --fix lib/** tests/**",
+    "test:unit": "jest",
+    "test": "jest"
+  },
+  "lint-staged": {
+    "{lib,tests}/**/*": [
+      "npm run lint",
+      "npm run test:unit",
+      "git add"
+    ]
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^4.4.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6",
+    "@babel/preset-typescript": "^7.15.0",
+    "@types/jest": "^27.0.2",
+    "@types/node": "^16.10.2",
+    "@typescript-eslint/eslint-plugin": "^4.32.0",
+    "@typescript-eslint/parser": "^4.32.0",
+    "babel-jest": "^27.2.4",
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "husky": "^7.0.0",
+    "jest": "^27.2.4",
+    "lint-staged": "^11.1.2",
+    "ts-node": "^10.2.1"
+  }
+}
